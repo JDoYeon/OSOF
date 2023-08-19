@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <windows.h>
+
+void init() {
+	system("mode con cols=160 lines=90 | title osof project");
+}
+
+void main() {
+	printf("\n\n");
+	printf("        //   ) )     //   ) )     //   ) )     //   / /\n");
+	printf("       //   / /     ((           //   / /     //___\n");
+	printf("      //   / /        \\         //   / /     // ___\n");
+	printf("     //   / /           ) )    //   / /     //\n");
+	printf("    ((___/ /     ((___ / /    ((___/ /     //\n");
+}
