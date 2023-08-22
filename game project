@@ -1,15 +1,43 @@
 #include <stdio.h>
 #include <windows.h>
 
-void init() {
-	system("mode con cols=160 lines=90 | title osof project");
-}
+void init();
+void titleDraw();
+void gotoxy(int, int);
+void menuDraw();
 
 void main() {
+	init();
+	titleDraw();
+	menuDraw();
+}
+
+void init() {
+	system("mode con cols=720 lines=540 | title osof project");
+}
+
+void titleDraw() {
 	printf("\n\n");
-	printf("        //   ) )     //   ) )     //   ) )     //   / /\n");
-	printf("       //   / /     ((           //   / /     //___\n");
-	printf("      //   / /        \\         //   / /     // ___\n");
-	printf("     //   / /           ) )    //   / /     //\n");
-	printf("    ((___/ /     ((___ / /    ((___/ /     //\n");
+	printf("                  //   ) )     //   ) )     //   ) )     //   / /\n");
+	printf("                 //   / /     ((           //   / /     //___\n");
+	printf("                //   / /        \\         //   / /     // ___\n");
+	printf("               //   / /           ) )    //   / /     //\n");
+	printf("              ((___/ /     ((___ / /    ((___/ /     //\n");
+}
+
+void gotoxy(int x, int y) {    //커서 이동 함수
+	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos;
+	pos.X = x;
+	pos.Y = y;
+	SetConsoleCursorPosition(consoleHandle, pos);
+}
+
+void menuDraw() {
+	gotoxy(32, 9);
+	printf("게 임 시 작 ");
+	gotoxy(32, 11);
+	printf("게 임 정 보 ");
+	gotoxy(32, 13);
+	printf("   종 료 ");
 }
