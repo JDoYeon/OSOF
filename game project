@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <windows.h>
+#include <conio.h>
 
 void init();
 void titleDraw();
 void gotoxy(int, int);
 void menuDraw();
 
-void main() {
+int main() {
 	init();
 	titleDraw();
 	menuDraw();
+    return 0;
 }
 
 void init() {
@@ -18,14 +20,16 @@ void init() {
 
 void titleDraw() {
 	printf("\n\n");
-	printf("                  //   ) )     //   ) )     //   ) )     //   / /\n");
-	printf("                 //   / /     ((           //   / /     //___\n");
-	printf("                //   / /        \\         //   / /     // ___\n");
-	printf("               //   / /           ) )    //   / /     //\n");
-	printf("              ((___/ /     ((___ / /    ((___/ /     //\n");
+	printf("                                      //   ) )     //   ) )     //   ) )     //   / /\n");
+	printf("                                     //   / /     ((           //   / /     //___\n");
+	printf("                                    //   / /        \\         //   / /     // ___\n");
+	printf("                                   //   / /           ) )    //   / /     //\n");
+	printf("                                  ((___/ /     ((___ / /    ((___/ /     //\n");
+	Sleep(3 * 1000);
+	system("cls");
 }
 
-void gotoxy(int x, int y) {    //커서 이동 함수
+void gotoxy(int x, int y) {
 	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos;
 	pos.X = x;
@@ -34,10 +38,10 @@ void gotoxy(int x, int y) {    //커서 이동 함수
 }
 
 void menuDraw() {
-	gotoxy(32, 9);
+	gotoxy(54, 5);
 	printf("게 임 시 작 ");
-	gotoxy(32, 11);
+	gotoxy(54, 7);
 	printf("게 임 정 보 ");
-	gotoxy(32, 13);
+	gotoxy(54, 9);
 	printf("   종 료 ");
 }
