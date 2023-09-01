@@ -25,7 +25,7 @@ void titleDraw() {
 	printf("                                    //   / /        \\         //   / /     // ___\n");
 	printf("                                   //   / /           ) )    //   / /     //\n");
 	printf("                                  ((___/ /     ((___ / /    ((___/ /     //\n");
-	Sleep(3 * 1000);
+	Sleep(3 * 1000); //millisecond
 	system("cls");
 }
 
@@ -43,5 +43,5 @@ void menuDraw() {
 	gotoxy(54, 7);
 	printf("게 임 정 보 ");
 	gotoxy(54, 9);
-	printf("   종 료 ");
+	printf("   종 료   ");
 }
